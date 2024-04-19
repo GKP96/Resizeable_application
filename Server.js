@@ -10,6 +10,17 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 import UserRouter from "./routes/UserRouter.js";
 import CountRouter from "./routes/CountRouter.js"
 
+const options = [
+  cors({
+      origin: '*',
+      methods: '*',
+      allowedHeaders: ['Content-Type', 'Authorization'],
+      credentials: true,
+  })
+];
+
+app.use(options);
+
 const app = express();
 app.use(bodyParser.json());
 app.use(cors());
