@@ -19,9 +19,10 @@ const options = [
   })
 ];
 
-app.use(options);
+
 
 const app = express();
+app.use(options);
 app.use(bodyParser.json());
 app.use(cors());
 app.use("/users", UserRouter);
